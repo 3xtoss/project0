@@ -11,7 +11,7 @@
 #include <string.h>
 
 //macro that defines maximum table size, I'm not sure that I actually use it but whatever
-#define ASCII_ARRAY_SIZE 25
+//#define ASCII_ARRAY_SIZE 25
 
 
 
@@ -30,7 +30,7 @@ More global values that will help with table creation.
 */
 int table_start;
 int table_end;
-int TABLE_SIZE;
+//int TABLE_SIZE;
 
 
 
@@ -123,7 +123,7 @@ int main(int argc, char *argv[])
     //printf("%d\n", table_end);
 
     //computing table size.
-    TABLE_SIZE = table_end - table_start;
+    //TABLE_SIZE = table_end - table_start;
     //printf("%d\n", TABLE_SIZE);
 
 
@@ -132,9 +132,9 @@ int main(int argc, char *argv[])
     example of default array values.
     a[0] = table_start, a[1],a[2],......, a[TABLE_SIZE] = table_end
     */
-    int ascii_print[TABLE_SIZE];
-    ascii_print[0] = table_start;
-    ascii_print[TABLE_SIZE] = table_end;
+    //int ascii_print[TABLE_SIZE];
+    //ascii_print[0] = table_start;
+    //ascii_print[TABLE_SIZE] = table_end;
 
 
     //test cases
@@ -143,25 +143,25 @@ int main(int argc, char *argv[])
 
 
     //temporary variable that will go to the next ascii value in the table.
-    int temp = table_start + 1;
+    //int temp = table_start + 1;
 
     /*
     Loops through and stores the appropriate ascii values into the table.
 
     */
-    for(int i = 1; i < TABLE_SIZE; i++) {
-      ascii_print[i] = temp;
+    //for(int i = 1; i < TABLE_SIZE; i++) {
+      //ascii_print[i] = temp;
 
       //test case
       //printf("ASCII: %d\t VALUE INSERTED: %d\n", ascii_print[i], temp);
-      temp += 1;
-    }
+      //temp += 1;
+    //}
 
-    for(int i = 0; i <= TABLE_SIZE; i++) {
-      printf("TABLE POSITION: %d\t Character Value: %c\n", i, (char) ascii_print[i]);
+    //for(int i = 0; i <= TABLE_SIZE; i++) {
+      //printf("TABLE POSITION: %d\t Character Value: %c\n", i, (char) ascii_print[i]);
+    //}
+  //}
     }
-  }
-
     //return 0;
 
     //helper variable
@@ -174,7 +174,7 @@ int main(int argc, char *argv[])
     do  {
       character_read = fgetc(stdin);
       conversion_character = (int) character_read;
-      printf("Character read: %c\t Decimal Conversion: %d\n",character_read, conversion_character);
+    //  printf("Character read: %c\t Decimal Conversion: %d\n",character_read, conversion_character);
 
       if(conversion_character == -1 || conversion_character > 255) {
         print_range(table_start, table_end);
@@ -182,7 +182,7 @@ int main(int argc, char *argv[])
       }
       else {
         full_character_table[conversion_character] += 1;
-        printf("Successful update");
+        //printf("Successful update");
       }
       //putchar(character_read);
     } while(character_read != EOF);
